@@ -3,21 +3,13 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh from './mesh.js'
 // import mesh from './mesh2.js'
 // import mesh from './mesh3.js'
-// import mesh from './point.js'
-// import mesh from './line.js'
-import mesh from './mesh4.js'
+// import mesh from './point.js' // 点
+// import mesh from './line.js' // 线
+// import mesh from './mesh4.js' // 圆柱
+import mesh from './mesh5.js' // 平面
 const scene = new THREE.Scene()
 
 scene.add(mesh)
-// {
-//     const geometry=new THREE.BoxGeometry(100,100,100);
-//     const material= new THREE.MeshLambertMaterial(({
-//         color:new THREE.Color('orange')
-//     }))
-//     const mesh=new THREE.Mesh(geometry,material)
-//     mesh.position.set(0,0,0)
-//     scene.add(mesh)
-// }
 
 const pointLight=new THREE.PointLight(0xffffff,10000)
 pointLight.position.set(80,80,80)
