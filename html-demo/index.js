@@ -2,7 +2,8 @@ import * as THREE from 'three'
 import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh from './mesh.js'
 // import mesh from './mesh2.js'
-import mesh from './mesh3.js'
+// import mesh from './mesh3.js'
+import mesh from './point.js'
 
 
 const scene = new THREE.Scene()
