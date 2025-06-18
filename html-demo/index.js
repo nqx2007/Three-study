@@ -6,7 +6,8 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh from './point.js' // 点
 // import mesh from './line.js' // 线
 // import mesh from './mesh4.js' // 圆柱
-import mesh,{updatePosition} from './mesh5.js' // 平面
+// import mesh,{updatePosition} from './mesh5.js' // 平面
+import mesh from './lineDashedMaterial.js'
 const scene = new THREE.Scene()
 
 scene.add(mesh)
@@ -16,8 +17,8 @@ pointLight.position.set(80,80,80)
 scene.add(pointLight)
 
 
-// const axesHelper=new THREE.AxesHelper(200)
-// scene.add(axesHelper)
+const axesHelper=new THREE.AxesHelper(200)
+scene.add(axesHelper)
 
 
 const width= window.innerWidth;
@@ -31,8 +32,6 @@ const renderer=new THREE.WebGLRenderer()
 renderer.setSize(width,height)
 
 function render(){
-    updatePosition()
-    mesh.rotateZ(0.003)
     renderer.render(scene,camera)
     requestAnimationFrame(render)
 }
@@ -44,6 +43,3 @@ document.body.append(renderer.domElement)
 
 const controls=new OrbitControls(camera,renderer.domElement)
 
-controls.addEventListener('change',()=>{
-    console.log(camera.position)
-})
