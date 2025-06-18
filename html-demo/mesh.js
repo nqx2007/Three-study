@@ -6,22 +6,18 @@ const vertices=new Float32Array([
     100,0,0,
     0,100,0,
     
-    0,100,0,
-    100,0,0,
+    // 0,100,0,
+    // 100,0,0,
     100,100,0,
-
-    0,0,0,
-    0,0,100,
-    100,0,0,
-
-    -10,0,0,
-    -100,0,0,
-    -10,0,100
 ])
 
 const attribute=new THREE.BufferAttribute(vertices,3)
 geometry.attributes.position=attribute;
 
+const indexes=new Uint16Array([
+    0,1,2,2,1,3
+])
+geometry.index=new THREE.BufferAttribute(indexes,1)
 const material=new THREE.MeshBasicMaterial({
     color:new THREE.Color('orange'),
     wireframe:true
