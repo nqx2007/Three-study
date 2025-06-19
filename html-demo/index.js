@@ -10,7 +10,8 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh from './lineDashedMaterial.js' // 虚线材质
 // import mesh from './mesh6.js'  // 纹理贴图：球体
 // import mesh from './mesh7.js'  // 纹理贴图：砖
-import mesh from './mesh8.js'  // 纹理贴图：平面
+// import mesh from './mesh8.js'  // 纹理贴图：平面
+import mesh from './mesh9.js'  // 纹理贴图：木星
 const scene = new THREE.Scene()
 
 scene.add(mesh)
@@ -20,8 +21,8 @@ pointLight.position.set(80,80,80)
 scene.add(pointLight)
 
 
-const axesHelper=new THREE.AxesHelper(200)
-scene.add(axesHelper)
+// const axesHelper=new THREE.AxesHelper(200)
+// scene.add(axesHelper)
 
 
 const width= window.innerWidth;
@@ -35,6 +36,7 @@ const renderer=new THREE.WebGLRenderer()
 renderer.setSize(width,height)
 
 function render(){
+    mesh.material.map.offset.y+=0.01
     renderer.render(scene,camera)
     requestAnimationFrame(render)
 }
