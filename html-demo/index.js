@@ -16,15 +16,23 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh from './mesh11.js'  // 曲线
 // import mesh from './mesh12.js'  // 二次贝塞尔曲线
 // import mesh from './mesh13.js'  // 三次贝塞尔曲线
-import mesh from './mesh14.js'  // 曲线
+// import mesh from './mesh14.js'  // 曲线
+import mesh from './mesh15.js'  // 曲线
 const scene = new THREE.Scene()
 
 scene.add(mesh)
 
-const pointLight=new THREE.PointLight(0xffffff,10000)
-pointLight.position.set(80,80,80)
-scene.add(pointLight)
+// const pointLight=new THREE.PointLight(0xffffff,10000)
+// pointLight.position.set(80,80,80)
+// scene.add(pointLight)
 
+const directionLight=new THREE.DirectionalLight(0xffffff)
+directionLight.position.set(100,100,100)
+scene.add(directionLight)
+
+
+const ambientLight=new THREE.AmbientLight(0x404040)
+scene.add(ambientLight)
 
 const axesHelper=new THREE.AxesHelper(200)
 scene.add(axesHelper)
@@ -32,8 +40,8 @@ scene.add(axesHelper)
 
 const width= window.innerWidth;
 const height=window.innerHeight;
-const camera=new THREE.PerspectiveCamera(60,width/height,1,1000)
-camera.position.set(0,100,200)
+const camera=new THREE.PerspectiveCamera(60,width/height,1,10000)
+camera.position.set(200,200,200)
 camera.lookAt(0,0,0)
 
 
