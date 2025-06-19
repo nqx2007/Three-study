@@ -18,7 +18,8 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh from './mesh13.js'  // 三次贝塞尔曲线
 // import mesh from './mesh14.js'  // 曲线
 // import mesh from './mesh15.js'  // 曲线
-import mesh from './mesh16.js'  // 管道
+// import mesh from './mesh16.js'  // 管道
+import mesh from './mesh17.js'  // 形状
 const scene = new THREE.Scene()
 
 scene.add(mesh)
