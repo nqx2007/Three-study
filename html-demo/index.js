@@ -19,25 +19,26 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh from './mesh14.js'  // 曲线
 // import mesh from './mesh15.js'  // 曲线
 // import mesh from './mesh16.js'  // 管道
-import mesh from './mesh17.js'  // 形状
+// import mesh from './mesh17.js'  // 形状
+import mesh,{tubePoints} from './mesh18.js'  // 管道穿梭
 const scene = new THREE.Scene()
 
 scene.add(mesh)
 
-// const pointLight=new THREE.PointLight(0xffffff,10000)
-// pointLight.position.set(80,80,80)
-// scene.add(pointLight)
+const pointLight=new THREE.PointLight(0xffffff,10000)
+pointLight.position.set(80,80,80)
+scene.add(pointLight)
 
-const directionLight=new THREE.DirectionalLight(0xffffff)
-directionLight.position.set(100,100,100)
-scene.add(directionLight)
+// const directionLight=new THREE.DirectionalLight(0xffffff)
+// directionLight.position.set(100,100,100)
+// scene.add(directionLight)
 
 
 const ambientLight=new THREE.AmbientLight(0x404040)
 scene.add(ambientLight)
 
-const axesHelper=new THREE.AxesHelper(200)
-scene.add(axesHelper)
+// const axesHelper=new THREE.AxesHelper(200)
+// scene.add(axesHelper)
 
 
 const width= window.innerWidth;
@@ -50,7 +51,15 @@ camera.lookAt(0,0,0)
 const renderer=new THREE.WebGLRenderer()
 renderer.setSize(width,height)
 
+let i=0
 function render(){
+    if(i< tubePoints.length - 1) {
+        camera.position.copy(tubePoints[i]);
+        camera.lookAt(tubePoints[i + 1]);
+        i += 1;
+    } else {
+        i = 0;
+    }
     renderer.render(scene,camera)
     requestAnimationFrame(render)
 }
