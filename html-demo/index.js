@@ -9,7 +9,8 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh,{updatePosition} from './mesh5.js' // 平面
 // import mesh from './lineDashedMaterial.js' // 虚线材质
 // import mesh from './mesh6.js'  // 纹理贴图：球体
-import mesh from './mesh7.js'  // 纹理贴图：砖
+// import mesh from './mesh7.js'  // 纹理贴图：砖
+import mesh from './mesh8.js'  // 纹理贴图：平面
 const scene = new THREE.Scene()
 
 scene.add(mesh)
@@ -19,14 +20,14 @@ pointLight.position.set(80,80,80)
 scene.add(pointLight)
 
 
-// const axesHelper=new THREE.AxesHelper(200)
-// scene.add(axesHelper)
+const axesHelper=new THREE.AxesHelper(200)
+scene.add(axesHelper)
 
 
 const width= window.innerWidth;
 const height=window.innerHeight;
-const camera=new THREE.PerspectiveCamera(60,width/height,1,10000)
-camera.position.set(90,230,1175)
+const camera=new THREE.PerspectiveCamera(60,width/height,1,1000)
+camera.position.set(0,0,200)
 camera.lookAt(0,0,0)
 
 
@@ -45,6 +46,3 @@ document.body.append(renderer.domElement)
 
 const controls=new OrbitControls(camera,renderer.domElement)
 
-controls.addEventListener('change', () => {
-    console.log(camera.position);
-})
