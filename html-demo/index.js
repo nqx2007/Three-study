@@ -13,7 +13,10 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh from './mesh8.js'  // 纹理贴图：平面
 // import mesh from './mesh9.js'  // 纹理贴图：木星
 // import mesh from './mesh10.js'  // 点
-import mesh from './mesh11.js'  // 曲线
+// import mesh from './mesh11.js'  // 曲线
+// import mesh from './mesh12.js'  // 二次贝塞尔曲线
+// import mesh from './mesh13.js'  // 三次贝塞尔曲线
+import mesh from './mesh14.js'  // 曲线
 const scene = new THREE.Scene()
 
 scene.add(mesh)
