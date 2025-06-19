@@ -17,7 +17,8 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls'
 // import mesh from './mesh12.js'  // 二次贝塞尔曲线
 // import mesh from './mesh13.js'  // 三次贝塞尔曲线
 // import mesh from './mesh14.js'  // 曲线
-import mesh from './mesh15.js'  // 曲线
+// import mesh from './mesh15.js'  // 曲线
+import mesh from './mesh16.js'  // 管道
 const scene = new THREE.Scene()
 
 scene.add(mesh)
